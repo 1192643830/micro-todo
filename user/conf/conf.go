@@ -26,7 +26,7 @@ func Init() {
 	path := strings.Join([]string{DbUser, ":", DbPassWord, "@tcp(", DbHost, ":", DbPort, ")/", DbName, "?charset=utf8&parseTime=true"}, "")
 	model.Database(path)
 }
-
+//解析mysql配置文件
 func LoadMysqlData(file *ini.File) {
 	Db = file.Section("mysql").Key("Db").String()
 	DbHost = file.Section("mysql").Key("DbHost").String()
